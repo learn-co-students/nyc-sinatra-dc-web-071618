@@ -1,0 +1,15 @@
+<form action="/landmarks/<%=@landmark.id%>" method="post">
+<input type="hidden" id="hidden" name="_method" value="patch">
+<input type="text" value="<%=@landmark.name%>" name="landmark[name]" id="name">
+<input type="text" value="<%=@landmark.year_completed%>" name="landmark[year_completed]" id="year_completed">
+
+<h2>Choose an existing figure</h2>
+<%Figure.all.each do |figure|%>
+<input type="checkbox" name="landmark[figure_id]" id="landmark_figure_id" value="figure_<%=figure.id%>" <%='checked' if @landmark.figure_id == figure.id%><%=figure.name%>
+<% end %>
+
+<h2>and/or create a new figure</h2>
+<br><br>
+Name: <input type="text" name="figure[name]" id="figure_name">
+<input type="submit" value="Edit Landmark">
+</form>
