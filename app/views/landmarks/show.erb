@@ -1,3 +1,4 @@
+<h1>Landmark Info</h1>
 <table>
   <tr>
     <th>Name</th>
@@ -7,6 +8,9 @@
   <tr>
     <td><%= @landmark.name %></td>
     <td><%= @landmark.year_completed %></td>
-    <td><%=@landmark.figure.name%></td>
+    <td><%= @landmark.figure.name unless @landmark.figure == nil%></td>
   </tr>
 <table>
+<br></br>
+<a href="/landmarks/<%=@landmark.id%>/edit">Edit this landmark<a><br>
+<a href="/landmarks">Return to all landmarks<a>

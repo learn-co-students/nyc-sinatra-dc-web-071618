@@ -1,3 +1,10 @@
+<h1> All Figures </h1>
 <%@figures.each do |figure|%>
-Name: <%=figure.name%>
+<b>Name:</b> <a href="/figures/<%=figure.id%>"> <%=figure.name%></a>
+<br></br>
 <%end%>
+
+<br>
+
+<a href="/figures/new">Create a new figure</a><br>
+<a href="/landmarks">View all landmarks</a>
