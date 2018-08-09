@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Create a new Landmark</h1>
+    <form action="/landmarks" method="POST">
+      <label>Name:</label>
+      <br></br>
+      <input type="text" name="landmark[name]" id="landmark_name">
+      <br></br>
+
+      <label>Year Completed:</label>
+      <br></br>
+      <input type="text" name="landmark[year_completed]" id="landmark_year_completed">
+      <br></br>
+
+      <label>Figures</label>
+      <br></br>
+      <%Figure.all.each do |figure|%>
+        <input type="radio" name="landmark[figure_id]" id="figure_<%=figure.id%>" value="<%=figure.id%>"><%=figure.name%></input>
+        <br></br>
+      <%end%>
+
+      <br></br>
+      <input type="submit" value="Create New Landmark">
+    </form>
+
+    <br></br>
+  </body>
+</html>
